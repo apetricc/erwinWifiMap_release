@@ -8,6 +8,8 @@
     "testDB_testChat": "testchat4-7",
     "testDb": "testchat4-7",
     "erwinWifiMap": "erwinfirebase1-0",
-    "erwinWeb": "fir-web-learn-2f50a"
+    "erwinWeb": "fir-web-learn-2f50a",
+    "erwinFirebase": "erwinfirebase1-0",
+    "webLearn": "fir-web-learn-2f50a"
   }
 }

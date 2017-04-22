@@ -1,6 +1,6 @@
 {
   "name": "erwin-wifimap",
-  "description": "Firebase SDK for Cloud Functions codelab",
+  "description": "Firebase and Google Maps",
   "dependencies": {
     "firebase-admin": "^4.1.1",
     "firebase-functions": "^0.5.1"

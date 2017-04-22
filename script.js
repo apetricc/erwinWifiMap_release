@@ -20,6 +20,14 @@
 
   var messageBox;
   var markerArray = [];
+  //global array var for all the markers    
+  var markers = [];     
+  var map;
+
+  var locations = [];    
+  var point = "";
+
+  var addressString = "";
 
   // Initializes ErwinWifiMap.
   function WifiMap() {
@@ -290,13 +298,6 @@
           'displayed there.');
     }
   };
-//
-//  window.onload = function() {
-//    window.wifiMap = new WifiMap();
-//    initMap(); 
-//      
-//  };
-
 
 
 
@@ -318,54 +319,32 @@ function pullLatLngs() {
       //createMarker(map, markerArray.pop().streetAddress);
        codeAddress(streetAddress);
    });//on child_added
-    //initMap();
 };
 
-
-
-
-
-
-    function createMarker(map, location) {
-        //alert("createMarker function called");
-        console.log("Adding marker to this location: " + codeAddress(location));
-        var marker = new google.maps.Marker({
-           map: map,
-            position: codeAddress(location),
-            title: "title",
-            animation: google.maps.Animation.DROP
+      function makeMarker(position) {
+          
+          console.log("Make marker location is: " + position);
+          var marker = new google.maps.Marker({
+            map: map,
+            title: "password",  
+            position: position,
+            animation: google.maps.Animation.DROP  
         });
-        markers.push(marker);
-    };//createMarker
+      };//makeMarker()
 
-      // This function takes in a COLOR, and then creates a new marker
-      // icon of that color. The icon will be 21 px wide by 34 high, have an origin
-      // of 0, 0 and be anchored at 10, 34).
-      function makeMarkerIcon(markerColor) {
-        var markerImage = new google.maps.MarkerImage(
-          'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|'+ markerColor +
-          '|40|_|%E2%80%A2',
-          new google.maps.Size(21, 34),
-          new google.maps.Point(0, 0),
-          new google.maps.Point(10, 34),
-          new google.maps.Size(21,34));
-        return markerImage;
-      };
 //function that geocodes an address to a latlng value the Google Maps API can use.
   function codeAddress(address) {
     var geocoder2 = new google.maps.Geocoder();
     geocoder2.geocode( { 'address': address}, function(results, status) {
       if (status == 'OK') {
-        map.setCenter(results[0].geometry.location);
-        var marker = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-        });
+        //map.setCenter(results[0].geometry.location);
+//        console.log("geocoding success at: "+ results[0].geometry.location);
+          makeMarker(results[0].geometry.location);
       } else {
         console.log('Geocode error for the following reason: ' + status);
       }
     });
-  }
+  };//codeAddress()
 
 
 //function to get street address from lat lng coordinates
@@ -394,18 +373,10 @@ function pullLatLngs() {
       };//reverseGeocodeAddress()  
 
         
-        //global array var for all the markers    
-        var markers = [];     
-        var map;
-        
-        var locations = [];    
-        var point = "";
-        var combined = [];
-    
-        var addressString = "";
+
     
     function initMap() {
-        var erwin = {lat:35.618614, lng:-82.62656199999998};
+        var erwin = {lat:35.617871, lng:-82.63009199999999};
         var asheville = {lat: 35.5946531, lng: -82.55577770000002};
         var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
         
@@ -425,22 +396,22 @@ function pullLatLngs() {
         });
         
         
-            //and populate based on that markers position
-            function populateInfoWindow(marker, infowindow) {
-                //check to make sure the infowindow is not already opened on
-                //this marker
-                if (infowindow.marker != marker) {
-                    infowindow.marker = marker;
-                    infowindow.setContent('<div>' + marker.title + '</div>');
-                    infowindow.open(map, marker);
-                    //make sure the marker property is cleared if the infowindow 
-                    //is closed
-                    infowindow.addListener('closeclick', function() {
-                        infowindow.setMarker = null;
-                    });
-                }
-                
-            }//populateInfoWindow()
+//            //and populate based on that markers position
+//            function populateInfoWindow(marker, infowindow) {
+//                //check to make sure the infowindow is not already opened on
+//                //this marker
+//                if (infowindow.marker != marker) {
+//                    infowindow.marker = marker;
+//                    infowindow.setContent('<div>' + marker.title + '</div>');
+//                    infowindow.open(map, marker);
+//                    //make sure the marker property is cleared if the infowindow 
+//                    //is closed
+//                    infowindow.addListener('closeclick', function() {
+//                        infowindow.setMarker = null;
+//                    });
+//                }
+//                
+//            }//populateInfoWindow()
             
             //Add event listener for mouse clicks
         google.maps.event.addListener(map, "click", function (event) {

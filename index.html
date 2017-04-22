@@ -67,11 +67,17 @@
   <header class="mdl-layout__header mdl-color-text--white mdl-color--light-green-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-        <h3> Erwin Wifi Map 1-0</h3> 
+        <h4 id="name"> Erwin Wifi Map 1-0</h4>
+          
+          <p id="instuctions">
+              <script>
+                alert("Click to select a location, then click "SAVE" to submit the location to database.");
+              </script>
+              
+          </p>
+
       </div>
-        <div id="testAppend">
-            <p>Click a location on map, then click the 'SAVE' button to save it to the database and add a marker.</p>
-        </div>
+        
       <div id="user-container">
         <div hidden id="user-pic"></div>
         <div hidden id="user-name"></div>
@@ -130,17 +136,10 @@
 <!-- Div with id 'map' which is where the map will be displayed -->
 <div class="map-container" id="map"></div>
 
-    calling google maps API asyncronously
+<!--    calling google maps API asyncronously-->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_LU1gytLu1Z-VXx4bsvXF0l6mhrsVzXE&callback=initMap">
     </script>
-      
-<!--      calling google maps sync-->
-<!--
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_LU1gytLu1Z-VXx4bsvXF0l6mhrsVzXE">
-    </script>
--->
-
 <!-- end map code -->
 
 
