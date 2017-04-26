@@ -67,11 +67,11 @@
   <header class="mdl-layout__header mdl-color-text--white mdl-color--light-green-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-        <h4 id="name"> Erwin Wifi Map 1-0</h4>
+        <h4 id="name">WifiMap</h4>
           
           <p id="instuctions">
               <script>
-                alert("Click to select a location, then click "SAVE" to submit the location to database.");
+                alert("Click to select a location, then click \"SAVE\" to submit the location to database.");
               </script>
               
           </p>
@@ -90,44 +90,7 @@
           <button id="map-print" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           Print Map
         </button>
-          
-<!--
-
-        <script>
-               $('#map-print').on('click',
-
-                /*
-                 * Print map function
-                 */
-               function printMaps() {
-                  var body               = $('body');
-                  var mapContainer       = $('.map-container');
-                  var mapContainerParent = mapContainer.parent();
-                  var printContainer     = $('<div>');
-
-                  printContainer
-                    .addClass('print-container')
-                    .css('position', 'relative')
-                    .height(mapContainer.height())
-                    .append(mapContainer)
-                    .prependTo(body);
-
-                  var content = body
-                    .children()
-                    .not('script')
-                    .not(printContainer)
-                    .detach();
-
-                  window.print();
-
-                  body.prepend(content);
-                  mapContainerParent.prepend(mapContainer);
-
-                  printContainer.remove();
-                  patchedStyle.remove();
-                });
-        </script>
--->
+   
       </div>
     </div>
   </header>

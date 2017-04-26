@@ -368,12 +368,8 @@
           if (status === google.maps.GeocoderStatus.OK) {
             WifiMap.prototype.toggleButton = true;
             resultsMap.setCenter(results[0].geometry.location);
-
               addressString = results[0].formatted_address;
-              
-              console.log("This is what's in the addressString var: " + addressString);
               addressNode = document.createTextNode(addressString);
-              
               $('#message').val(addressString + "; \n" + results[0].geometry.location);
               
           } else {
@@ -412,7 +408,7 @@
             locations.push(latitude);
             locations.push(longitude);
             point = "" +latitude +","+ longitude;
-            console.log("point is: " + point);
+            
             radius = new google.maps.Circle({map: map,
                         radius: 20,
                         center: event.latLng,
@@ -427,12 +423,7 @@
         }); //end addListener            
       }//initMap()
 
-  //on window load run functions
-  window.onload = function() {
-    
-    window.wifiMap = new WifiMap();
-    window.initMap(function() {
-      pullLatLngs();  
-    });
-      
+  //on window load create new WifiMap
+  window.onload = function() {    
+    window.wifiMap = new WifiMap();      
   };  
