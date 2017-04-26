@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "name": "Friendly Chat",
+  "name": "Erwin Wifi Map",
   "launch_path": "/index.html",
-  "description": "Chat with friends using Firebase 2.0",
+  "description": "Save wifi hotspot locations and share with other students",
   "developer": {
-    "name": "Google inc.",
-    "url": "https://firebase.google.com"
+    "name": "Andrew Petriccione and Google inc.",
+    "url": "https://fir-web-learn-2f50a.firebaseapp.com/"
   },
   "installs_allowed_from": [
     "*"
@@ -15,8 +15,8 @@
   },
   "locales": {
     "en": {
-      "name": "Friendly Chat",
-      "description": "Chat with friends using Firebase 2.0"
+      "name": "Erwin Wifi Map",
+      "description": "Save wifi hotspot locations and share with other students"
     }
   }
 }

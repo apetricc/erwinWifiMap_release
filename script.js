@@ -147,12 +147,6 @@
     this.messageInput.focus();
   };//displayMessage()
 
-  //****************************************************************************************************
-  //display locations in the UI
-  WifiMap.prototype.displayLocation = function() {
-    alert("display location");
-  }
-
   // Saves a new message/location on the Firebase DB.
   WifiMap.prototype.saveMessage = function(e) {
     e.preventDefault();
